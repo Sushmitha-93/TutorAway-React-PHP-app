@@ -8,7 +8,7 @@ class Contacts extends Component {
     contacts:[]
    } 
    componentDidMount() {
-    const url = process.env.REACT_APP_API_URL
+    const url = 'https://contacts--php.herokuapp.com/'
     axios.get(url).then(response => response.data)
     .then((data) => {
       this.setState({ contacts: data })
