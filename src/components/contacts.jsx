@@ -8,7 +8,7 @@ class Contacts extends Component {
     contacts:[]
    } 
    componentDidMount() {
-    const url = 'http://localhost:3000/contacts.php'
+    const url = process.env.REACT_APP_API_URL
     axios.get(url).then(response => response.data)
     .then((data) => {
       this.setState({ contacts: data })
