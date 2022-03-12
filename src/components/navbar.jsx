@@ -1,7 +1,9 @@
-import React from 'react'
+import React from "react";
 import { Link } from "react-router-dom";
 
 export default function NavBar() {
+  const isAdmin = localStorage.getItem("isAdmin");
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <Link className="navbar-brand" to="/">
@@ -22,33 +24,54 @@ export default function NavBar() {
         <ul className="navbar-nav mr-auto">
           <li className="nav-item active">
             <Link className="nav-link" to="/">
-              Home 
+              Home
             </Link>
-          </li>         
-              <li className="nav-item">
-                <Link className="nav-link" to="/about">
-                  About
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/services">
-                  Services
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/news">
-                  News
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/contacts">
-                  Contacts
-                </Link>
-              </li>
-          </ul>
-          
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/about">
+              About
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/services">
+              Services
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/news">
+              News
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/contacts">
+              Contacts
+            </Link>
+          </li>
+        </ul>
       </div>
-
-      </nav>
-  )
+      <ul className="navbar-nav">
+        {isAdmin && (
+          <React.Fragment>
+            <li className="nav-item">
+              <Link className="nav-link" to="/currentUsers">
+                Current Users
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/logout">
+                Logout
+              </Link>
+            </li>
+          </React.Fragment>
+        )}
+        {!isAdmin && (
+          <li className="nav-item">
+            <Link className="nav-link" to="/login">
+              Login
+            </Link>
+          </li>
+        )}
+      </ul>
+    </nav>
+  );
 }
