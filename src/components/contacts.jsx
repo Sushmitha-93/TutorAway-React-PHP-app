@@ -8,8 +8,8 @@ class Contacts extends Component {
     contacts: {},
   };
   componentDidMount() {
-    // const url = 'https://contacts--php.herokuapp.com/' // For production
-    const url = "http://localhost:3000/index.php";
+    const url = "https://contacts--php.herokuapp.com/"; // For production
+    //const url = "http://localhost:3000/index.php";
     axios
       .get(url)
       .then((response) => response.data)

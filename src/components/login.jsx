@@ -20,7 +20,7 @@ class Login extends Component {
 
     console.log("formdata:", formData);
 
-    const url = "http://localhost:3000/authenticate.php";
+    const url = "https://contacts--php.herokuapp.com/authenticate.php";
     axios({
       method: "post",
       url: url,
