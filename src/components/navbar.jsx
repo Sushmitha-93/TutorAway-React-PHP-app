@@ -6,7 +6,7 @@ export default function NavBar() {
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-      <Link className="navbar-brand" href="#">
+      <Link className="navbar-brand" to="/" href="#">
         TutorAway
       </Link>
       <button

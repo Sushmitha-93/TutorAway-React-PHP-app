@@ -4,7 +4,7 @@ class Logout extends Component {
   componentDidMount() {
     localStorage.removeItem("isAdmin");
 
-    window.location = "/TutorAway-React-PHP-app";
+    window.location = "/";
   }
   render() {
     return null;
