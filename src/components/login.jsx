@@ -33,7 +33,7 @@ class Login extends Component {
 
         localStorage.setItem("isAdmin", response.data);
 
-        window.location = "/";
+        window.location = "/TutorAway-React-PHP-app";
       })
       .catch(function (response) {
         //handle error
