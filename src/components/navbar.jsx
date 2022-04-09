@@ -5,7 +5,7 @@ export default function NavBar() {
   const isAdmin = localStorage.getItem("isAdmin");
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark ">
       <Link className="navbar-brand" to="/" href="#">
         TutorAway
       </Link>
@@ -20,6 +20,7 @@ export default function NavBar() {
       >
         <span className="navbar-toggler-icon"></span>
       </button>
+
       <div className="collapse navbar-collapse" id="navbarText">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item active">
@@ -47,8 +48,36 @@ export default function NavBar() {
               Contacts
             </Link>
           </li>
+          <li className="nav-item dropdown">
+            <a
+              className="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdownMenuLink"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              User
+            </a>
+            <ul
+              className="dropdown-menu"
+              aria-labelledby="navbarDropdownMenuLink"
+            >
+              <li>
+                <Link className="dropdown-item" to="/createuser">
+                  Create User
+                </Link>
+              </li>
+              <li>
+                <Link className="dropdown-item" to="/searchuser">
+                  Search User
+                </Link>
+              </li>
+            </ul>
+          </li>
         </ul>
       </div>
+
       <ul className="navbar-nav">
         {isAdmin && (
           <React.Fragment>

@@ -14,6 +14,7 @@ class Login extends Component {
 
     console.log(user);
 
+    // Need create form data object for php to receive in code friendly format
     let formData = new FormData();
     formData.append("userid", user.userid);
     formData.append("password", user.password);
