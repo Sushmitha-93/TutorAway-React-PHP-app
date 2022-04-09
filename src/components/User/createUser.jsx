@@ -24,7 +24,8 @@ class CreateUser extends Component {
     formData.append("city", user.city);
     formData.append("phone", user.phone);
 
-    const url = "http://localhost:3000/createUser.php";
+    //const url = "http://localhost:3000/createUser.php";
+    const url = "https://tutorawayphp.azurewebsites.net/createUser.php";
 
     axios({
       method: "post",
