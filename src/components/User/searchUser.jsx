@@ -2,7 +2,16 @@ import React, { Component } from "react";
 import axios from "axios";
 
 class SearchUser extends Component {
-  state = {};
+  state = {
+    rows: [],
+    cols: [
+      { label: "userid", path: "userid" },
+      { label: "name", path: "name" },
+      { label: "email", path: "email" },
+      { label: "city", path: "city" },
+      { label: "phone", path: "phone" },
+    ],
+  };
 
   handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,8 +35,8 @@ class SearchUser extends Component {
     formData.append("city", user.city);
     formData.append("phone", user.phone);
 
-    //const url = "http://localhost:3000/searchUser.php";
-    const url = "https://tutorawayphp.azurewebsites.net/searchUser.php";
+    const url = "http://localhost:3000/searchUser.php";
+    //const url = "https://tutorawayphp.azurewebsites.net/searchUser.php";
 
     axios({
       method: "post",
@@ -35,10 +44,11 @@ class SearchUser extends Component {
       data: formData,
       config: { headers: { "Content-Type": "multipart/form-data" } },
     })
-      .then(function (response) {
+      .then((response) => {
         //handle success
         console.log(response);
         console.log(response.data);
+        this.setState({ rows: response.data });
       })
       .catch(function (response) {
         //handle error
@@ -47,6 +57,9 @@ class SearchUser extends Component {
   };
 
   render() {
+    const rows = this.state.rows;
+    const cols = this.state.cols;
+
     return (
       <div className="row justify-content-center">
         <div className="col-md-8">
@@ -55,7 +68,10 @@ class SearchUser extends Component {
           <br />
           <div className="card">
             <div className="card-body ">
-              <form class="row gx-3 gy-2 align-items-center">
+              <form
+                class="row gx-3 gy-2 align-items-center"
+                onSubmit={this.handleSubmit}
+              >
                 <div class="col-sm">
                   <label class="visually-hidden" for="userid">
                     User id
@@ -83,7 +99,7 @@ class SearchUser extends Component {
                     email
                   </label>
                   <input
-                    type="email"
+                    type="text"
                     class="form-control"
                     id="email"
                     placeholder="Enter Email"
@@ -94,7 +110,7 @@ class SearchUser extends Component {
                     City
                   </label>
                   <input
-                    type="email"
+                    type="text"
                     class="form-control"
                     id="city"
                     placeholder="Enter City"
@@ -119,10 +135,30 @@ class SearchUser extends Component {
               </form>
             </div>
           </div>
-          {/* <br />
-          <div className="alert alert-success" role="alert">
-            A simple success alert—check it out!
-          </div> */}
+          {/*Card ends */}
+          <br />
+          {rows.length > 0 && (
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">User ID</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">City</th>
+                  <th scope="col">Phone</th>
+                </tr>
+              </thead>
+              <tbody>
+                {rows.map((row) => (
+                  <tr>
+                    {cols.map((col) => (
+                      <td>{row[col.path]}</td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          )}
         </div>
       </div>
     );
