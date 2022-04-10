@@ -14,6 +14,11 @@ import Logout from "./components/logout";
 import CreateUser from "./components/User/createUser";
 import SearchUser from "./components/User/searchUser";
 
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "@popperjs/core"; // 'npm i @popper/core' and import jquery dependency otherwise features such as dropdown or toggle doesnt work
+import "bootstrap/dist/js/bootstrap.bundle.min";
+
 function App() {
   return (
     <React.Fragment>
