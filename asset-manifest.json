@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/TutorAway-React-PHP-app/static/css/main.9c55dea7.css",
-    "main.js": "/TutorAway-React-PHP-app/static/js/main.b66a59a4.js",
+    "main.js": "/TutorAway-React-PHP-app/static/js/main.5fc92c58.js",
     "static/js/787.56e861bd.chunk.js": "/TutorAway-React-PHP-app/static/js/787.56e861bd.chunk.js",
     "index.html": "/TutorAway-React-PHP-app/index.html",
     "main.9c55dea7.css.map": "/TutorAway-React-PHP-app/static/css/main.9c55dea7.css.map",
-    "main.b66a59a4.js.map": "/TutorAway-React-PHP-app/static/js/main.b66a59a4.js.map",
+    "main.5fc92c58.js.map": "/TutorAway-React-PHP-app/static/js/main.5fc92c58.js.map",
     "787.56e861bd.chunk.js.map": "/TutorAway-React-PHP-app/static/js/787.56e861bd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9c55dea7.css",
-    "static/js/main.b66a59a4.js"
+    "static/js/main.5fc92c58.js"
   ]
 }
