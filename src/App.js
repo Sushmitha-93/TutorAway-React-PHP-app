@@ -18,6 +18,16 @@ import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@popperjs/core"; // 'npm i @popper/core' and import jquery dependency otherwise features such as dropdown or toggle doesnt work
 import "bootstrap/dist/js/bootstrap.bundle.min";
+import ReactjsCourse from "./components/Courses/reactjsCourse";
+import NodejsCourse from "./components/Courses/nodejsCourse";
+import VuejsCourse from "./components/Courses/vuejsCourse";
+import NextjsCourse from "./components/Courses/nextjsCourse";
+import PythonCourse from "./components/Courses/pythonCourse";
+import MLCourse from "./components/Courses/mlCourse";
+import NLPCourse from "./components/Courses/nlpCourse";
+import MongodbCourse from "./components/Courses/mongodbCourse";
+import JavascriptCourse from "./components/Courses/javascriptCourse";
+import ReactNativeCourse from "./components/Courses/reactnativeCourse";
 
 function App() {
   return (
@@ -34,6 +44,16 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/currentUsers" element={<CurrentUsers />} />
+        <Route path="/reactjsCourse" element={<ReactjsCourse />} />
+        <Route path="/nodejsCourse" element={<NodejsCourse />} />
+        <Route path="/nextjsCourse" element={<NextjsCourse />} />
+        <Route path="/vuejsCourse" element={<VuejsCourse />} />
+        <Route path="/reactnativeCourse" element={<ReactNativeCourse />} />
+        <Route path="/pythonCourse" element={<PythonCourse />} />
+        <Route path="/mlCourse" element={<MLCourse />} />
+        <Route path="/nlpCourse" element={<NLPCourse />} />
+        <Route path="/mongodbCourse" element={<MongodbCourse />} />
+        <Route path="/javascriptCourse" element={<JavascriptCourse />} />
       </Routes>
     </React.Fragment>
   );
