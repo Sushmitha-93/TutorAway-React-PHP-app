@@ -1,15 +1,24 @@
 {
   "files": {
     "main.css": "/TutorAway-React-PHP-app/static/css/main.9c55dea7.css",
-    "main.js": "/TutorAway-React-PHP-app/static/js/main.a5e77ad8.js",
+    "main.js": "/TutorAway-React-PHP-app/static/js/main.cc01d751.js",
     "static/js/787.56e861bd.chunk.js": "/TutorAway-React-PHP-app/static/js/787.56e861bd.chunk.js",
+    "static/media/vuejs.png": "/TutorAway-React-PHP-app/static/media/vuejs.5244aa97e908310089b9.png",
+    "static/media/nextjs-thumb.png": "/TutorAway-React-PHP-app/static/media/nextjs-thumb.2d274df4dde04f25d8c5.png",
+    "static/media/react-js.jpg": "/TutorAway-React-PHP-app/static/media/react-js.4c2d00e4ab12331a4ce2.jpg",
+    "static/media/reactpic.jpg": "/TutorAway-React-PHP-app/static/media/reactpic.4c2d00e4ab12331a4ce2.jpg",
+    "static/media/reactnative.png": "/TutorAway-React-PHP-app/static/media/reactnative.a09f5ddd5e2ed0e8484a.png",
+    "static/media/machineLearning.png": "/TutorAway-React-PHP-app/static/media/machineLearning.28fadc9d8c474855248c.png",
+    "static/media/pythonimage.png": "/TutorAway-React-PHP-app/static/media/pythonimage.e59959824b25a79896db.png",
+    "static/media/nlp.png": "/TutorAway-React-PHP-app/static/media/nlp.d95deab3f9dcecab227d.png",
+    "static/media/nodejspic.jpg": "/TutorAway-React-PHP-app/static/media/nodejspic.76e10e7528236c692aa7.jpg",
     "index.html": "/TutorAway-React-PHP-app/index.html",
     "main.9c55dea7.css.map": "/TutorAway-React-PHP-app/static/css/main.9c55dea7.css.map",
-    "main.a5e77ad8.js.map": "/TutorAway-React-PHP-app/static/js/main.a5e77ad8.js.map",
+    "main.cc01d751.js.map": "/TutorAway-React-PHP-app/static/js/main.cc01d751.js.map",
     "787.56e861bd.chunk.js.map": "/TutorAway-React-PHP-app/static/js/787.56e861bd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9c55dea7.css",
-    "static/js/main.a5e77ad8.js"
+    "static/js/main.cc01d751.js"
   ]
 }
