@@ -6,7 +6,6 @@ import NavBar from "./components/navbar";
 import Home from "./components/home";
 import About from "./components/about";
 import Services from "./components/services";
-import News from "./components/news";
 import Contacts from "./components/contacts";
 import Login from "./components/login";
 import CurrentUsers from "./components/currentUsers";
@@ -18,6 +17,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@popperjs/core"; // 'npm i @popper/core' and import jquery dependency otherwise features such as dropdown or toggle doesnt work
 import "bootstrap/dist/js/bootstrap.bundle.min";
+
 import ReactjsCourse from "./components/Courses/reactjsCourse";
 import NodejsCourse from "./components/Courses/nodejsCourse";
 import VuejsCourse from "./components/Courses/vuejsCourse";
@@ -37,7 +37,6 @@ function App() {
         <Route exact path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
-        <Route path="/news" element={<News />} />
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/createuser" element={<CreateUser />} />
         <Route path="/searchuser" element={<SearchUser />} />

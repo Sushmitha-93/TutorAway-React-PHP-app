@@ -100,6 +100,49 @@ export default function Services() {
         </div>
       </header>
 
+      <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <button
+            class="nav-link active"
+            id="nav-all-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#nav-all"
+            type="button"
+            role="tab"
+            aria-controls="nav-all"
+            aria-selected="true"
+          >
+            All
+          </button>
+          <button
+            class="nav-link"
+            id="nav-top5courses-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#nav-top5courses"
+            type="button"
+            role="tab"
+            aria-controls="nav-top5courses"
+            aria-selected="false"
+          >
+            Top 5 Courses
+          </button>
+          <button
+            class="nav-link"
+            id="nav-previsolyvisted-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#nav-previsolyvisted"
+            type="button"
+            role="tab"
+            aria-controls="nav-previsolyvisted"
+            aria-selected="false"
+          >
+            Previously visited
+          </button>
+        </div>
+      </nav>
+
+      <br />
+
       <main>
         <div className="row row-cols-3 row-cols-md-4 mb-3 gy-5 text-center">
           {cards.map((card) => (
