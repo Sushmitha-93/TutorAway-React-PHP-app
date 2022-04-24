@@ -18,7 +18,7 @@ class SearchUser extends Component {
     console.log("handleSubmit() called");
 
     const user = {
-      userid: e.target.userid,
+      userid: e.target.userid.value,
       name: e.target.name.value,
       email: e.target.email.value,
       city: e.target.city.value,
@@ -26,6 +26,7 @@ class SearchUser extends Component {
     };
 
     console.log(user);
+    console.log(userid.value);
 
     // Sending datain formdata object so that it can be coded easily in php side
     let formData = new FormData();
