@@ -37,7 +37,7 @@ class SearchUser extends Component {
 
     //const url = "http://localhost:3000/searchUser.php";
     //const url = "https://tutorawayphp.azurewebsites.net/searchUser.php";
-    const url = "https://tutorawayphpbackend.000webhostapp.com/searchUserphp";
+    const url = "https://tutorawayphpbackend.000webhostapp.com/searchUser.php";
 
     axios({
       method: "post",
