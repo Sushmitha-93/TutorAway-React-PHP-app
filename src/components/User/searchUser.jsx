@@ -26,7 +26,7 @@ class SearchUser extends Component {
     };
 
     console.log(user);
-    console.log(userid.value);
+    console.log(user.userid.value);
 
     // Sending datain formdata object so that it can be coded easily in php side
     let formData = new FormData();
