@@ -50,9 +50,9 @@ class CreateUser extends Component {
   render() {
     return (
       <div className="row justify-content-center">
-        <div className="col-md-5">
+        <div className="col-md-4">
           <br />
-          <h1 className="text-center">Create User</h1>
+          <h1 className="text-center">Create New User</h1>
           <br />
           <div class="card">
             <div class="card-body">
@@ -90,7 +90,7 @@ class CreateUser extends Component {
                   </div>
                 </div>
                 <button type="submit" class="btn btn-primary">
-                  Submit
+                  Create User
                 </button>
               </form>
             </div>

@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import _ from "lodash";
+import _, { intersection, toNumber } from "lodash";
+import axios from "axios";
 
 class Services extends Component {
   state = {
     images: [],
-    cards: [
+    cardsToRender: [],
+    allCourses: [
       {
         courseid: 1,
         course: "Master React",
@@ -103,15 +105,86 @@ class Services extends Component {
       require.context("../img", false, /\.(png|jpe?g|svg)$/)
     );
 
-    this.setState({ images: images });
+    this.setState({ cardsToRender: this.state.allCourses, images: images });
     // ********************************************//
   }
 
+  handleClick = (courseid) => {
+    console.log("handleClick", courseid);
+
+    //post course to php backend
+    //const url = "https://tutorawayphpbackend.000webhostapp.com/courseVisited.php";
+    const url = "http://localhost:3000/courseVisited.php";
+
+    // Sending datain formdata object so that it can be coded easily in php side
+    let formData = new FormData();
+    formData.append("courseid", courseid);
+
+    // Axios post
+    axios({
+      method: "post",
+      url: url,
+      data: formData,
+      withCredentials: true,
+      config: { headers: { "Content-Type": "multipart/form-data" } },
+    })
+      .then(function (response) {
+        //handle success
+        console.log(response);
+      })
+      .catch(function (response) {
+        //handle error
+        console.log(response);
+      });
+  };
+
+  getCookie = (cname) => {
+    let name = cname + "=";
+    let ca = document.cookie.split(";");
+    for (let i = 0; i < ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) == " ") {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return decodeURIComponent(c.substring(name.length, c.length));
+      }
+    }
+    return "";
+  };
+
+  handleTabSelect = (tab) => {
+    const allCourses = this.state.allCourses;
+    console.log("Tab selected: ", tab);
+    if (tab == "all") {
+      this.setState({ cardsToRender: allCourses });
+    }
+    if (tab == "previously visited") {
+      let lastVisitedCourses = JSON.parse(
+        this.getCookie("lastVisitedCourses")
+      ).map(Number);
+      //console.log(typeof lastVisitedCourses[0]);
+
+      let lastVisted = lastVisitedCourses.map((c) => {
+        return _.filter(allCourses, { courseid: c })[0];
+      });
+      //console.log(lastVisted);
+      this.setState({ cardsToRender: lastVisted });
+    }
+    if (tab == "top 5 courses") {
+      let top5courses = [1, 3, 4, 5, 8];
+
+      top5courses = top5courses.map((c) => {
+        return _.filter(allCourses, { courseid: c })[0];
+      });
+
+      this.setState({ cardsToRender: top5courses });
+    }
+  };
+
   render() {
-    const cards = this.state.cards;
+    const cardsToRender = this.state.cardsToRender;
     const images = this.state.images;
-    const top5courses = ["1", "8", "3", "4", "9"];
-    console.log(_.filter(cards, { courseid: 1 }));
 
     return (
       <div className="container py-3">
@@ -136,6 +209,7 @@ class Services extends Component {
               role="tab"
               aria-controls="nav-all"
               aria-selected="true"
+              onClick={() => this.handleTabSelect("all")}
             >
               All
             </button>
@@ -148,6 +222,7 @@ class Services extends Component {
               role="tab"
               aria-controls="nav-top5courses"
               aria-selected="false"
+              onClick={() => this.handleTabSelect("top 5 courses")}
             >
               Top 5 Courses
             </button>
@@ -160,6 +235,7 @@ class Services extends Component {
               role="tab"
               aria-controls="nav-previsolyvisted"
               aria-selected="false"
+              onClick={() => this.handleTabSelect("previously visited")}
             >
               Previously visited
             </button>
@@ -170,7 +246,7 @@ class Services extends Component {
 
         <main>
           <div className="row row-cols-3 row-cols-md-4 mb-3 gy-5 text-center">
-            {cards.map((card) => (
+            {cardsToRender.map((card) => (
               <div className="col">
                 <div className="card h-100">
                   <img
@@ -187,6 +263,7 @@ class Services extends Component {
                       <button
                         type="button"
                         className="w-100 btn btn-lg btn-primary"
+                        onClick={() => this.handleClick(card.courseid)}
                       >
                         Get Started
                       </button>

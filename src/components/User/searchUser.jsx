@@ -26,7 +26,6 @@ class SearchUser extends Component {
     };
 
     console.log(user);
-    console.log(user.userid.value);
 
     // Sending datain formdata object so that it can be coded easily in php side
     let formData = new FormData();
@@ -138,6 +137,7 @@ class SearchUser extends Component {
             </div>
           </div>
           {/*Card ends */}
+          <p>Search with any field...</p>
           <br />
           {rows.length > 0 && (
             <table class="table">
