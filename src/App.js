@@ -8,7 +8,6 @@ import About from "./components/about";
 import Services from "./components/services";
 import Contacts from "./components/contacts";
 import Login from "./components/login";
-import CurrentUsers from "./components/currentUsers";
 import Logout from "./components/logout";
 import CreateUser from "./components/User/createUser";
 import SearchUser from "./components/User/searchUser";
@@ -42,7 +41,6 @@ function App() {
         <Route path="/searchuser" element={<SearchUser />} />
         <Route path="/login" element={<Login />} />
         <Route path="/logout" element={<Logout />} />
-        <Route path="/currentUsers" element={<CurrentUsers />} />
         <Route path="/reactjsCourse" element={<ReactjsCourse />} />
         <Route path="/nodejsCourse" element={<NodejsCourse />} />
         <Route path="/nextjsCourse" element={<NextjsCourse />} />

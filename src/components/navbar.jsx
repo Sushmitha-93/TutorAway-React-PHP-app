@@ -44,43 +44,38 @@ export default function NavBar() {
               Contacts
             </Link>
           </li>
-          <li className="nav-item dropdown">
-            <a
-              className="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdownMenuLink"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              User
-            </a>
-            <ul
-              className="dropdown-menu"
-              aria-labelledby="navbarDropdownMenuLink"
-            >
-              <li>
-                <Link className="dropdown-item" to="/createuser">
-                  Create User
-                </Link>
-              </li>
-              <li>
-                <Link className="dropdown-item" to="/searchuser">
-                  Search User
-                </Link>
-              </li>
-            </ul>
-          </li>
         </ul>
       </div>
 
       <ul className="navbar-nav">
         {isAdmin && (
           <React.Fragment>
-            <li className="nav-item">
-              <Link className="nav-link" to="/currentUsers">
-                Current Users
-              </Link>
+            <li className="nav-item dropdown">
+              <a
+                className="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdownMenuLink"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                User
+              </a>
+              <ul
+                className="dropdown-menu"
+                aria-labelledby="navbarDropdownMenuLink"
+              >
+                <li>
+                  <Link className="dropdown-item" to="/createuser">
+                    Create User
+                  </Link>
+                </li>
+                <li>
+                  <Link className="dropdown-item" to="/searchuser">
+                    Search User
+                  </Link>
+                </li>
+              </ul>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/logout">
