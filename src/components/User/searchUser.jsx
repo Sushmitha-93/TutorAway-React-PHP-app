@@ -36,7 +36,8 @@ class SearchUser extends Component {
     formData.append("phone", user.phone);
 
     //const url = "http://localhost:3000/searchUser.php";
-    const url = "https://tutorawayphp.azurewebsites.net/searchUser.php";
+    //const url = "https://tutorawayphp.azurewebsites.net/searchUser.php";
+    const url = "https://tutorawayphpbackend.000webhostapp.com/searchUserphp";
 
     axios({
       method: "post",

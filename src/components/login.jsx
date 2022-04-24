@@ -22,7 +22,9 @@ class Login extends Component {
     console.log("formdata:", formData);
 
     //const url = "https://contacts--php.herokuapp.com/authenticate.php";
-    const url = "https://tutorawayphp.azurewebsites.net/authenticate.php";
+    //const url = "https://tutorawayphp.azurewebsites.net/authenticate.php";
+    const url =
+      "https://tutorawayphpbackend.000webhostapp.com/authenticate.php";
 
     axios({
       method: "post",

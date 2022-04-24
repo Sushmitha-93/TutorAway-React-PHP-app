@@ -10,7 +10,8 @@ class Contacts extends Component {
   componentDidMount() {
     //const url = "https://contacts--php.herokuapp.com/"; // For production
     //const url = "http://localhost:3000/index.php";
-    const url = "https://tutorawayphp.azurewebsites.net/";
+    //const url = "https://tutorawayphp.azurewebsites.net/";
+    const url = "https://tutorawayphpbackend.000webhostapp.com/";
 
     axios
       .get(url)
