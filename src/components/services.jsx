@@ -112,31 +112,44 @@ class Services extends Component {
   handleClick = (courseid) => {
     console.log("handleClick", courseid);
 
+    if (localStorage.lastVisitedCourses) {
+      let visitedCourses = JSON.parse(
+        localStorage.getItem("lastVisitedCourses")
+      );
+
+      visitedCourses.unshift(courseid);
+      localStorage.lastVisitedCourses = JSON.stringify(
+        visitedCourses.slice(0, 5)
+      );
+    } else {
+      localStorage.lastVisitedCourses = JSON.stringify([courseid]);
+    }
+
     //post course to php backend
-    const url =
-      "https://tutorawayphpbackend.000webhostapp.com/courseVisited.php";
-    //const url = "http://localhost:3000/courseVisited.php";
+    //   const url =
+    //     "https://tutorawayphpbackend.000webhostapp.com/courseVisited.php";
+    //   //const url = "http://localhost:3000/courseVisited.php";
 
-    // Sending datain formdata object so that it can be coded easily in php side
-    let formData = new FormData();
-    formData.append("courseid", courseid);
+    //   // Sending datain formdata object so that it can be coded easily in php side
+    //   let formData = new FormData();
+    //   formData.append("courseid", courseid);
 
-    // Axios post
-    axios({
-      method: "post",
-      url: url,
-      data: formData,
-      withCredentials: true,
-      config: { headers: { "Content-Type": "multipart/form-data" } },
-    })
-      .then(function (response) {
-        //handle success
-        console.log("coursevisted res:", response);
-      })
-      .catch(function (response) {
-        //handle error
-        console.log(response);
-      });
+    //   // Axios post
+    //   axios({
+    //     method: "post",
+    //     url: url,
+    //     data: formData,
+    //     withCredentials: true,
+    //     config: { headers: { "Content-Type": "multipart/form-data" } },
+    //   })
+    //     .then(function (response) {
+    //       //handle success
+    //       console.log("courseVisited res:", response);
+    //     })
+    //     .catch(function (response) {
+    //       //handle error
+    //       console.log(response);
+    //     });
   };
 
   getCookie = (cname) => {
@@ -162,17 +175,21 @@ class Services extends Component {
     }
 
     if (tab == "previously visited") {
-      let lastVisitedCourses = JSON.parse(
-        this.getCookie("lastVisitedCourses")
-      ).map(Number);
+      // let lastVisitedCourses = JSON.parse(
+      //   this.getCookie("lastVisitedCourses")
+      // ).map(Number);
       //console.log(typeof lastVisitedCourses[0]);
-      console.log("last visted course cookie:", lastVisitedCourses);
+      let lastVisitedCourses = JSON.parse(
+        localStorage.getItem("lastVisitedCourses")
+      );
+      console.log("last Visited courses :", lastVisitedCourses);
+      console.log(typeof lastVisitedCourses[0]);
 
-      let lastVisted = lastVisitedCourses.map((c) => {
+      let lastVisited = lastVisitedCourses.map((c) => {
         return _.filter(allCourses, { courseid: c })[0];
       });
-      //console.log(lastVisted);
-      this.setState({ cardsToRender: lastVisted });
+      //console.log(lastVisited);
+      this.setState({ cardsToRender: lastVisited });
     }
 
     if (tab == "top 5 courses") {
@@ -232,12 +249,12 @@ class Services extends Component {
             </button>
             <button
               class="nav-link"
-              id="nav-previsolyvisted-tab"
+              id="nav-previsolyVisited-tab"
               data-bs-toggle="tab"
-              data-bs-target="#nav-previsolyvisted"
+              data-bs-target="#nav-previsolyVisited"
               type="button"
               role="tab"
-              aria-controls="nav-previsolyvisted"
+              aria-controls="nav-previsolyVisited"
               aria-selected="false"
               onClick={() => this.handleTabSelect("previously visited")}
             >
