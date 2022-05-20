@@ -27,6 +27,7 @@ import NLPCourse from "./components/Courses/nlpCourse";
 import MongodbCourse from "./components/Courses/mongodbCourse";
 import JavascriptCourse from "./components/Courses/javascriptCourse";
 import ReactNativeCourse from "./components/Courses/reactnativeCourse";
+import ListOtherUsers from "./components/User/listOtherUsers";
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/createuser" element={<CreateUser />} />
         <Route path="/searchuser" element={<SearchUser />} />
+        <Route path="/listOtherUsers" element={<ListOtherUsers />} />
         <Route path="/login" element={<Login />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/reactjsCourse" element={<ReactjsCourse />} />

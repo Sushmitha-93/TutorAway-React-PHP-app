@@ -86,7 +86,7 @@ class Services extends Component {
         img: "nlp.png",
         tagline:
           "Explore Fundamental concepts of NLP and its role in current and emerging technologies through hands on exercises.",
-        link: "nlpCourse",
+        link: "/nlpCourse",
       },
     ],
   };
@@ -113,8 +113,9 @@ class Services extends Component {
     console.log("handleClick", courseid);
 
     //post course to php backend
-    //const url = "https://tutorawayphpbackend.000webhostapp.com/courseVisited.php";
-    const url = "http://localhost:3000/courseVisited.php";
+    const url =
+      "https://tutorawayphpbackend.000webhostapp.com/courseVisited.php";
+    //const url = "http://localhost:3000/courseVisited.php";
 
     // Sending datain formdata object so that it can be coded easily in php side
     let formData = new FormData();
@@ -130,7 +131,7 @@ class Services extends Component {
     })
       .then(function (response) {
         //handle success
-        console.log(response);
+        console.log("coursevisted res:", response);
       })
       .catch(function (response) {
         //handle error
@@ -159,11 +160,13 @@ class Services extends Component {
     if (tab == "all") {
       this.setState({ cardsToRender: allCourses });
     }
+
     if (tab == "previously visited") {
       let lastVisitedCourses = JSON.parse(
         this.getCookie("lastVisitedCourses")
       ).map(Number);
       //console.log(typeof lastVisitedCourses[0]);
+      console.log("last visted course cookie:", lastVisitedCourses);
 
       let lastVisted = lastVisitedCourses.map((c) => {
         return _.filter(allCourses, { courseid: c })[0];
@@ -171,6 +174,7 @@ class Services extends Component {
       //console.log(lastVisted);
       this.setState({ cardsToRender: lastVisted });
     }
+
     if (tab == "top 5 courses") {
       let top5courses = [1, 3, 4, 5, 8];
 

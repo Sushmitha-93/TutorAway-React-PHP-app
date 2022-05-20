@@ -8,14 +8,15 @@ class Home extends Component {
           <div class="p-5 mb-4 bg-light rounded-3">
             <div class="container-fluid py-5">
               <h1 class="display-5 fw-bold">Tutor Away from Home!</h1>
-              <p class="col-md-8 fs-4">
-                Using a series of utilities, you can create this jumbotron, just
-                like the one in previous versions of Bootstrap. Check out the
-                examples below for how you can remix and restyle it to your
-                liking.
+              <p class="col-md-12 fs-4">
+                Explore our thousands of courses on tons of topics, Boost your
+                skills! Get access to numerous courses!
+                <br /> Are you an expert and love to teach? Using a series of
+                utilities, you can design and create e-courses, or even take
+                live classes and give live assignments.
               </p>
               <button class="btn btn-primary btn-lg" type="button">
-                Example button
+                Sign up & get started!
               </button>
             </div>
           </div>
@@ -23,28 +24,30 @@ class Home extends Component {
           <div class="row align-items-md-stretch">
             <div class="col-md-6">
               <div class="h-100 p-5 text-white bg-dark rounded-3">
-                <h2>Change the background</h2>
+                <h2>Learn Remote!</h2>
                 <p>
-                  Swap the background-color utility and add a `.text-*` color
-                  utility to mix up the jumbotron look. Then, mix and match with
-                  additional component themes and more.
+                  Get access to numerous free courses, check out course library{" "}
+                  <br /> Get live class experince with home works | Register to
+                  live classes |
+                  <br /> Learn new things & Stay updated !!
                 </p>
                 <button class="btn btn-outline-light" type="button">
-                  Example button
+                  Sign Up for Free!
                 </button>
               </div>
             </div>
             <div class="col-md-6">
               <div class="h-100 p-5 bg-light border rounded-3">
-                <h2>Add borders</h2>
+                <h2>Teach Remote!</h2>
                 <p>
-                  Or, keep it light and add a border for some added definition
-                  to the boundaries of your content. Be sure to look under the
-                  hood at the source HTML here as we've adjusted the alignment
-                  and sizing of both column's content for equal-height.
+                  Are you an expert on a subject? Do you love to teach? <br />{" "}
+                  Teach a live class | Publish assighments, grades easily <br />{" "}
+                  Tutor a student | Review assignments | Answer Student Doubts
+                  <br />
+                  Create, Host and Sell Courses !
                 </p>
                 <button class="btn btn-outline-secondary" type="button">
-                  Example button
+                  Contact Us!
                 </button>
               </div>
             </div>

@@ -75,6 +75,11 @@ export default function NavBar() {
                     Search User
                   </Link>
                 </li>
+                <li>
+                  <Link className="dropdown-item" to="/listOtherUsers">
+                    List All Users
+                  </Link>
+                </li>
               </ul>
             </li>
             <li className="nav-item">
